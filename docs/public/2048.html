@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048</title>
+    <style>
+        .container {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .chessboard {
+            display: flex;
+            flex-wrap: wrap;
+            width: 300px;
+            background-color: #fafafa;
+            border-radius: 8px;
+            overflow: hidden;
+            border: thin solid #e7e7e7;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .row .col:nth-last-child(-n+1) {
+            border-right-width: 0;
+        }
+
+        .row:nth-last-child(-n+1) .col {
+            border-bottom-width: 0;
+        }
+        
+        .col {
+            cursor: default;
+            height: 75px;
+            width: 75px;
+            font-size: 14px;
+            font-weight: bold;
+            user-select: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            border-right: thin solid #e7e7e7;
+            border-bottom: thin solid #e7e7e7;
+        }
+
+        .title{
+            text-align: center;
+            margin: 0.37em 0;
+            user-select: none;
+        }
+
+        #app{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            color: #9575CD;
+        }
+
+        body{
+            margin: 0;
+            background-color: transparent;
+        }
+    </style>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.min.js"></script>
+<div
+    id="app"
+    @touchstart="onTouchStart"
+    @touchmove="onTouchMove"
+    @touchend="onTouchEnd"
+>
+    <div class="container">
+        <h3 v-if="gameOver" class="title">
+            😥 Game over! click <a @click="init">here</a> to restart
+        </h3>
+        <h3 v-else class="title">
+            <span v-if="max>=2048">🎉🎉</span>
+            Max: {{ max }}
+        </h3>
+        <div class="chessboard">
+            <div v-for="(d, index) in data" :key="index" class="row">
+                <div
+                    v-for="(i, idx) in d"
+                    :key="idx"
+                    class="col"
+                    :style="{
+                            color: colors[i] || colors['greater'],
+                        }
+                    ">
+                    {{ i }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: () => ({
+            data: [],
+            gameOver: false,
+            colors: {
+                0: '#fafafa',
+                2: '#00BCD4',
+                4: '#0097A7',
+                8: '#03A9F4',
+                16: '#1976D2',
+                32: '#3F51B5',
+                64: '#009688',
+                128: '#673AB7',
+                256: '#9C27B0',
+                512: '#E57373',
+                1024: '#F06292',
+                2048: '#C2185B',
+                greater: '#880E4F',
+            },
+            startPos: [],
+        }),
+        created() {
+            this.init();
+        },
+        mounted(){
+            window.addEventListener('keydown', this.onKeyDown);
+        },
+        beforeDestroy(){
+            window.removeEventListener('keydown', this.onKeydown);
+        },
+        computed: {
+            max() {
+                let max = 0;
+                this.data.forEach(d => {
+                    const rowMax = Math.max(...d);
+                    (max < rowMax) && (max = rowMax);
+                })
+                return max;
+            }
+        },
+        methods: {
+            init() {
+                this.data = [];
+                this.gameOver = false;
+                for (let row = 0; row < 4; row++) {
+                    const rowArr = [];
+                    for (let col = 0; col < 4; col++) {
+                        rowArr.push(0);
+                    }
+                    this.data.push(rowArr);
+                }
+                this.add();
+            },
+            add() {
+                const [row, col] = [
+                    Math.floor(Math.random() * 4),
+                    Math.floor(Math.random() * 4),
+                ];
+                if (this.data[row][col]) {
+                    this.add();
+                } else {
+                    this.data[row][col] = Math.random() > 0.5 ? 2 : 4;
+                }
+            },
+            move(rowArr) {
+                const validArr = rowArr.filter((a) => a !== 0);
+                rowArr.forEach((_, i) => rowArr[i] = validArr[i] || 0);
+            },
+            merge(rowArr) {
+                rowArr.forEach((r, i) => {
+                    if (i + 1 < rowArr.length && r === rowArr[i + 1] && r !== 0) {
+                        rowArr[i] *= 2;
+                        rowArr[i + 1] = 0;
+                        this.merge([...rowArr]);
+                    }
+                });
+            },
+            act(rowArr) {
+                const originalArr = JSON.stringify(rowArr);
+                this.move(rowArr);
+                this.merge(rowArr);
+                if (JSON.stringify(rowArr) !== originalArr) {
+                    this.move(rowArr);
+                }
+            },
+            react(direction) {
+                !this.update(direction) && this.add();
+                this.checkOver();
+            },
+            update(direction, reserve=false) {
+                let rowArr;
+                const originalData = JSON.parse(JSON.stringify(this.data));
+                for (let row = 0; row < 4; row++) {
+                    switch (direction) {
+                        case "left":
+                            this.act(originalData[row]);
+                            break;
+                        case "right":
+                            this.act(originalData[row].reverse());
+                            originalData[row].reverse();
+                            break;
+                        case "up":
+                            rowArr = [];
+                            for (let i = 0; i < 4; i++) {
+                                rowArr.push(originalData[i][row]);
+                            }
+                            this.act(rowArr);
+                            for (let i = 0; i < 4; i++) {
+                                originalData[i][row] = rowArr[i];
+                            }
+                            break;
+                        case "down":
+                            rowArr = [];
+                            for (let i = 4 - 1; i >= 0; i--) {
+                                rowArr.push(originalData[i][row]);
+                            }
+                            this.act(rowArr);
+                            for (let i = 0; i < 4; i++) {
+                                originalData[i][row] = rowArr[4 - i - 1];
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                const same = JSON.stringify(this.data) === JSON.stringify(originalData);
+                !reserve && (this.data = JSON.parse(JSON.stringify(originalData)))
+
+                return same;
+            },
+            checkOver() {
+                this.gameOver = this.update('up', true) && this.update('down', true) && this.update('left', true) && this.update('right', true);
+            },
+            toReact(stopX, stopY){
+                const horizontalDelta = stopX - this.startPos[0];
+                const verticalDelta = stopY - this.startPos[1];
+
+                const horizontalDeltaAbs = Math.abs(horizontalDelta);
+                const verticalDeltaAbs = Math.abs(verticalDelta)
+
+                if(horizontalDeltaAbs>3 || verticalDeltaAbs>3){
+                    if(Math.abs(horizontalDelta)>Math.abs(verticalDelta)){
+                        if(horizontalDelta>0){
+                            this.react('right');
+                        }else{
+                            this.react('left');
+                        }
+                    }else{
+                        if(verticalDelta>0){
+                            this.react('down');
+                        }else{
+                            this.react('up')
+                        }
+                    }
+                }
+            },
+            onTouchStart(ev){
+                this.startPos = [ev.touches[0].clientX, ev.touches[0].clientY];
+            },
+            onTouchEnd(ev){
+                this.toReact(ev.changedTouches[0].clientX, ev.changedTouches[0].clientY);
+            },
+            onTouchMove(ev){
+                ev.preventDefault();
+            },
+            onKeyDown(ev){
+                this.react(ev.key.replace('Arrow', '').toLowerCase());
+            }
+        }
+    })
+</script>
+</body>
+</html>

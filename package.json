@@ -1,0 +1,19 @@
+{
+  "name": "n-notes",
+  "version": "1.0.0",
+  "description": "Knowledge has no limit.",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
+  },
+  "main": "index.js",
+  "author": "Allen Tao",
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "^1.0.0-alpha.4",
+    "vue": "^3.2.37",
+    "fast-glob": "^3.2.11",
+    "gray-matter": "^4.0.3"
+  }
+}
