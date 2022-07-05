@@ -21,6 +21,9 @@ export default defineConfig({
     base: '/n-notes/',
     description: 'Knowledge has no limit',
     lastUpdated: true,
+    head: [
+        ['link', { rel: 'icon', href: '/n-notes/favicon.ico' }]
+    ],
     themeConfig: {
         logo: '/logo.svg',
         siteTitle: 'N Notes',
