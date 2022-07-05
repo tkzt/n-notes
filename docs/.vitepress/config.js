@@ -18,9 +18,6 @@ const macroCategories = [
 
 export default defineConfig({
     title: 'N Notes',
-    head:  [
-        ['link', { href: '/logo.svg', rel: 'icon' }]
-    ],
     base: '/n-notes/',
     description: 'Knowledge has no limit',
     lastUpdated: true,
@@ -30,11 +27,12 @@ export default defineConfig({
         nav: nav(),
         sidebar: sidebar(),
         editLink: {
-            pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path'
+            pattern: 'https://github.com/boring-plans/n-notes/edit/main/docs/:path'
         },
         socialLinks: [
             { icon: 'github', link: 'https://github.com/boring-plans' },
-        ]
+        ],
+        footer: false
     },
     algolia: {
         appId: 'P30D7LZ51B',

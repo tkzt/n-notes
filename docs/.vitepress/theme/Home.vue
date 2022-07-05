@@ -11,6 +11,7 @@
         </div>
       </div>
 
+
       <div 
         class="category-card blurred" 
         v-for="({ title, description, link }, index) in categories" 
@@ -22,19 +23,19 @@
         <div class="card-description">{{ description }}</div>
       </div>
 
-      <div class="fluid caption" key="footer">
+      <footer class="fluid caption">
           &copy; {{new Date().getFullYear()}} Allen Tao
-      </div>
+      </footer>
     </div>
   </div>
 </template>
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useRouter } from 'vitepress';
 
 const router = useRouter();
 const dark = ref(false);
-const categories = ref([]);
+const categories = ref(getCategories());
 
 function checkBgWhetherDark() {
   const img = new Image();
@@ -72,11 +73,14 @@ function getCategories() {
 }
 
 function goto(path){
-  router.go('/n-notes/' + path)
+  router.go('/n-notes/' + path).then(()=>{
+    window.location.reload();
+  });
 }
 
-checkBgWhetherDark();
-categories.value.push(...getCategories())
+onMounted(() => {
+  checkBgWhetherDark();
+});
 </script>
 
 <style scoped>
@@ -130,6 +134,7 @@ categories.value.push(...getCategories())
   bottom: 0;
   left: 0;
   opacity: .87;
+  font-weight: 400;
 }
 
 .brand-title {
@@ -177,15 +182,18 @@ categories.value.push(...getCategories())
   position: absolute;
   right: -13px;
 }
+
 ::-webkit-scrollbar-thumb {
   border-radius: 1em;
   background-color: rgba(50, 50, 50, 0.28);
   border: 3px solid transparent;
   background-clip: content-box;
 }
+
 ::-webkit-scrollbar-track {
   background-color: rgba(50, 50, 50, 0.06);
 }
+
 ::-webkit-scrollbar-corner {
   background-color: rgba(50, 50, 50, 0.06);
 }
@@ -211,5 +219,4 @@ categories.value.push(...getCategories())
      position: relative;
   }
 }
-
 </style>
