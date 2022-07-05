@@ -52,7 +52,7 @@ export default {
 ![\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-AUaoA6vm-1630575158056)(assets/example.png)\]](https://img-blog.csdnimg.cn/ce3dcb6037264c79a4a55e7fdaba589b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA6Zm26Iqx5byA,size_20,color_FFFFFF,t_70,g_se,x_16)
 
 
-更具体的示例见 [此](https://taoqingqiu.github.io/vuetify-icon-picker/)
+更具体的示例见 [此](https://boring-plans.github.io/vuetify-icon-picker/)
 
 ## 组件 API
 
