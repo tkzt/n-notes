@@ -10,6 +10,7 @@
           Knowledge has no limit.
         </div>
       </div>
+
       <div 
         class="category-card blurred" 
         v-for="({ title, description, link }, index) in categories" 
@@ -20,7 +21,8 @@
         <div class="card-title">{{ title }}</div>
         <div class="card-description">{{ description }}</div>
       </div>
-      <div class="fluid caption">
+
+      <div class="fluid caption" key="footer">
           &copy; {{new Date().getFullYear()}} Allen Tao
       </div>
     </div>
