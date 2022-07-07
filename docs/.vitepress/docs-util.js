@@ -20,11 +20,11 @@ function buildTree(docs, categories) {
             const { data: { title } } = matter.read(d);
             return {
                 title,
-                link: d.replace(/(?:^docs|.md$)/g, ''),
+                link: d.replace(/(^docs|.md$)/g, ''),
             }
         })
         const category = {
-            link: curr.replace(/(?:^docs|index.md$)/g, ''),
+            link: curr.replace(/(^docs|index.md$)/g, ''),
             title,
             description,
             children

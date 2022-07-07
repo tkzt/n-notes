@@ -90,7 +90,7 @@ onMounted(() => {
   height: 100vh;
   background-image: url(https://picsum.photos/1920/1080?random);
   background-size: cover;
-  overflow: visible;
+  overflow: auto;
   color: rgba(255, 255, 255, 0.87);
 }
 
