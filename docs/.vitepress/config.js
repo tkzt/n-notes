@@ -38,13 +38,9 @@ export default defineConfig({
         footer: false
     },
     algolia: {
-        appId: 'P30D7LZ51B',
-        apiKey: 'ff2fb8be1301d8e9efaa94da359a1355',
-        indexName: 'n-notes'
-    },
-    carbonAds: {
-        code: 'CEBDT27Y',
-        placement: 'vuejsorg'
+        appId: 'QCKYLKARBM',
+        apiKey: 'e89d9b7317363496a6ee93c0ab888d62',
+        indexName: 'tkzt',
     }
 })
 
