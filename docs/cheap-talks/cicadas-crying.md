@@ -1,6 +1,6 @@
 ---
 title: 孤蝉唱夏
-titleTemplate: Cheap Talk
+titleTemplate: Cheap Talks
 ---
 # 孤蝉唱夏
 

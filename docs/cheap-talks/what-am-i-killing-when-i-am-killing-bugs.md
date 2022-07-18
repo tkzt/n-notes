@@ -1,6 +1,6 @@
 ---
 title: 当我踩小强时我踩些什么
-titleTemplate: 程序员物语
+titleTemplate: Cheap Talks
 ---
 # 当我踩小强时我踩些什么
 

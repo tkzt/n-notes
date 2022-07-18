@@ -8,7 +8,7 @@ const macroCategories = [
     },
     {
         text: 'Cheap Talks',
-        path: '/cheap-talk/'
+        path: '/cheap-talks/'
     },
     {
         text: 'Boring Plans',
