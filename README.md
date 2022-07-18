@@ -1,19 +1,16 @@
-
-![N Notes Logo](https://boring-plans.github.io/n-notes/logo.svg)
-
+<p align="center">
+    <img width="180" src="https://boring-plans.github.io/n-notes/logo.svg" alt="N Notes Logo" />
+</p>
+<p align="center">
+  <a href="https://github.com/boring-plans/n-notes/blob/main/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/boring-plans/n-notes?color=royalblue"></a>
+  <a href="https://github.com/boring-plans/n-notes/actions/workflows/cd.yml?query=branch%3Amain"><img src="https://img.shields.io/github/workflow/status/boring-plans/n-notes/cd/main" alt="build status"></a>
+</p>
 
 # N Notes
 
 N Notes is a blog site based on VitePress and hosted by Github Pages.
 
 You can click [here](https://boring-plans.github.io/n-notes) to visit.
-
-
-
-
-## Roadmap
-
-- Add Algolia
 
 
 ## Article Categories
