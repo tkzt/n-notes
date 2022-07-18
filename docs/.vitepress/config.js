@@ -35,12 +35,12 @@ export default defineConfig({
         socialLinks: [
             { icon: 'github', link: 'https://github.com/boring-plans' },
         ],
-        footer: false
-    },
-    algolia: {
-        appId: 'QCKYLKARBM',
-        apiKey: 'e89d9b7317363496a6ee93c0ab888d62',
-        indexName: 'tkzt',
+        footer: false,
+        algolia: {
+            appId: 'QCKYLKARBM',
+            apiKey: 'e89d9b7317363496a6ee93c0ab888d62',
+            indexName: 'tkzt',
+        }
     }
 })
 
