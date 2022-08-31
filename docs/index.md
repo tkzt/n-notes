@@ -7,7 +7,7 @@ hero:
   text: 一个切图师枯燥的切图日志。
   tagline: 是的，这是一个博客网站。
   image:
-    src: /logo.png
+    src: /logo.svg
     alt: VitePress
   actions:
     - theme: brand
