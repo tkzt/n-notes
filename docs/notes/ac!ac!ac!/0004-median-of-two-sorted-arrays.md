@@ -9,7 +9,7 @@ titleTemplate: AC!AC!AC!
 
 ## 题目
 
-![](https://s1.ax1x.com/2022/08/16/vwUcqI.png)
+[![](https://s1.ax1x.com/2022/08/16/vwUcqI.png)](https://leetcode.cn/problems/median-of-two-sorted-arrays/description/)
 
 
 ## 分析
