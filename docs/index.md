@@ -34,6 +34,4 @@ features:
     details: 顾名思义，有趣的八股文。
   - title: Notes - 那些杀不死我的
     details: 记录了一些, 偶尔迫不得已而探索的一些过时、冷门或无趣的技术, 很显然用了尼大师的典, 「What Doesn't Kill You Makes You Stronger」。
-  - title: Notes - Unity 学习笔记
-    details: 新开一坑。Unity 人人都玩，不玩才怪。
 ---
