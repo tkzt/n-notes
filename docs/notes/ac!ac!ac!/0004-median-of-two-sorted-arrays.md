@@ -11,7 +11,6 @@ titleTemplate: AC!AC!AC!
 
 [![](https://s1.ax1x.com/2022/08/16/vwUcqI.png)](https://leetcode.cn/problems/median-of-two-sorted-arrays/description/)
 
-
 ## 分析
 
 首先二分。由于有序，所以合并时，前面比较过的不必再比较，于是再加个索引缓存。
@@ -55,3 +54,5 @@ class Solution:
             else:
                 return self.get_insert_index(nums[:mid], num)
 ```
+
+## as `d`

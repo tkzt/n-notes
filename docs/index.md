@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: 组队探索（4 体力）
-      link: /notes/ac!ac!ac!/0004-median-of-two-sorted-arrays.html
+      link: /notes/what-doesnt-kill-me/a-green-story.html
     - theme: alt
       text: 单人探索（6 体力）
       link: https://github.com/boring-plans/n-notes

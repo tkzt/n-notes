@@ -30,5 +30,5 @@ function buildTree(docs, categories) {
             children
         }
         return [...pre, category];
-    }, [])
+    }, []).sort((a, b)=>a.title>b.title?-1:1)
 }
