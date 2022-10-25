@@ -45,7 +45,7 @@ export default defineConfig({
         footer: false,
         algolia: {
             appId: 'QCKYLKARBM',
-            apiKey: 'e89d9b7317363496a6ee93c0ab888d62',
+            apiKey: '52369651aa7f8e76f02ce3153031f857',
             indexName: 'tkzt',
         }
     }
