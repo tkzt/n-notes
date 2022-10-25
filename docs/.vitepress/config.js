@@ -21,7 +21,7 @@ export default defineConfig({
     description: 'Knowledge has no limit',
     lastUpdated: true,
     head: [
-        ['link', { rel: 'icon', href: '/n-notes/favicon.ico' }]
+        ['link', { rel: 'icon', href: '/favicon.ico' }]
     ],
     themeConfig: {
         logo: '/logo.svg',
