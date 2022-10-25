@@ -59,12 +59,11 @@ P     I
 - `s` 由英文字母（小写和大写）、`','` 和 `'.'` 组成
 - `1 <= numRows <= 1000`
 
-<font size=1>
+<!-- <font size=1> -->
 
-来源：力扣（LeetCode）<br>
-链接：[zigzag-conversion](https://leetcode.cn/problems/zigzag-conversion)
-
-</font>
+_来源：力扣（LeetCode）<br>
+链接：[zigzag-conversion](https://leetcode.cn/problems/zigzag-conversion)_
+<!-- </font> -->
 
 ## 分析
 
