@@ -18,7 +18,6 @@ const macroCategories = [
 
 export default defineConfig({
     title: 'N Notes',
-    base: '/n-notes/',
     description: 'Knowledge has no limit',
     lastUpdated: true,
     head: [
