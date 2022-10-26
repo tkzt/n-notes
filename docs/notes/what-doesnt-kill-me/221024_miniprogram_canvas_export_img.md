@@ -1,5 +1,4 @@
 ---
-title: 小程序 Canvas 导出图片记
 titleTemplate: 那些杀不死我的
 ---
 
@@ -42,6 +41,18 @@ img.onload=()=>{
         },
     });
 }
+```
+
+然而今天（2022/10/26）发现，IOS 端，`canvasToTempFilePath` 会报 `invalid viewId` 错误，于是改改写法：
+
+```js
+const base64 = canvas.toDataURL("image/png");
+const tempPath = wx.env.USER_DATA_PATH+`/${new Date().getTime()}.png`;
+const imgData = base64.split(',').slice(1).join('');
+const fs = wx.getFileSystemManager();
+fs.writeFileSync(tempPath, imgData, "base64");
+
+console.log(tempPath);
 ```
 
 
