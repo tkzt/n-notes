@@ -1,4 +1,3 @@
----
-title: Boring Plans
-description: 一些 Pet Projects 的开发日志
----
+# Boring Plans
+
+一些个人项目的开发记录。

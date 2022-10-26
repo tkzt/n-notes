@@ -1,4 +1,7 @@
 ---
 title: Stereotyped
-description: 有趣的八股文
 ---
+
+# Stereotyped
+
+有趣的八股文。

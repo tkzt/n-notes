@@ -52,18 +52,17 @@ export default defineConfig({
 })
 
 function nav() {
-    const formattedCategories = getFormattedCategories();
     return  macroCategories.map(mc=>({
         text: mc.text,
         activeMatch: mc.path,
-        link: formattedCategories.find(fc=>fc.link.includes(mc.path)).items[0]?.link || ''
+        link: mc.path
     }));
 }
   
 function sidebar() {
     const formattedCategories = getFormattedCategories();
     return macroCategories.reduce((pre, curr)=>({...pre,
-        [curr.path]: formattedCategories.filter(fc=>fc.link.includes(curr.path))
+        [curr.path]: formattedCategories.filter(fc=>fc.link.includes(curr.path)&&fc.link.match(/\//g)?.length>2)
     }), {})
 }
 

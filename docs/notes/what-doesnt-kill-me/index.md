@@ -1,4 +1,8 @@
 ---
 title: 那些杀不死我的
-description: 记录了一些, 偶尔迫不得已而探索的一些过时、冷门或无趣的技术, 很显然用了尼大师的典, 「What Doesn't Kill You Makes You Stronger」
 ---
+
+
+# 那些杀不死我的
+
+记录了一些, 偶尔迫不得已而探索的一些过时、冷门或无趣的技术, 很显然用了尼大师的典, 「What Doesn't Kill You Makes You Stronger」

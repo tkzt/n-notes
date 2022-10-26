@@ -8,15 +8,15 @@ export function getCategories() {
 }
 
 function getBasicCategories(docs){
-    return docs.filter(d => d.includes('/index.md') && d!=='docs/index.md');
+    return docs.filter(d => d.includes('index.md') && d!=='docs/index.md');
 }
 
 
 function buildTree(docs, categories) {
     return categories.reduce((pre, curr)=>{
-        const { data: { title, description } } = matter.read(curr);
+        const { data: { title } } = matter.read(curr);
         const prefixPath = curr.replace('index.md', '');
-        const children = docs.filter(d => d.includes(prefixPath) && !d.includes('/index.md')).map(d=>{
+        const children = docs.filter(d => d.match(new RegExp(prefixPath+'[^\/]*?\.md')) && !d.includes('/index.md')).map(d=>{
             const { data: { title } } = matter.read(d);
             return {
                 title,
@@ -26,7 +26,6 @@ function buildTree(docs, categories) {
         const category = {
             link: curr.replace(/(^docs|index.md$)/g, ''),
             title,
-            description,
             children
         }
         return [...pre, category];
