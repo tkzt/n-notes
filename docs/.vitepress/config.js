@@ -62,7 +62,7 @@ function nav() {
 function sidebar() {
     const formattedCategories = getFormattedCategories();
     return macroCategories.reduce((pre, curr)=>({...pre,
-        [curr.path]: formattedCategories.filter(fc=>fc.link.includes(curr.path)&&fc.link.match(/\//g)?.length>2)
+        [curr.path]: formattedCategories.filter(fc=>fc.link.includes(curr.path)&&fc.items?.length)
     }), {})
 }
 
