@@ -267,4 +267,4 @@ titleTemplate: Boring Plans
 
 ## Try
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=400 src="/n-notes/2048.html"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=400 src="/2048.html"></iframe>
