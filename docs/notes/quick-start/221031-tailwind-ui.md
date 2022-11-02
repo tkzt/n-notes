@@ -5,8 +5,6 @@ titleTemplate: Quick Start
 
 # Tailwind CSS 分享
 
-By 陶康
-
 ## What is Tailwind CSS
 
 - [NPM Downloads Trending](https://npmtrends.com/tailwindcss)
