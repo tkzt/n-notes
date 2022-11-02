@@ -256,7 +256,7 @@ module.exports = {
 };
 ```
 
-或者通过 `@layer` 以及 `@layer` 指令，基于 Tailwind CSS 变量来自定义：
+或者通过 `@layer` 以及 `@apply` 指令，基于 Tailwind CSS 变量来自定义：
 
 ```css
 @tailwind base;
