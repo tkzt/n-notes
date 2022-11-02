@@ -1,5 +1,6 @@
 ---
 title: Tailwind CSS 分享
+titleTemplate: Quick Start
 ---
 
 # Tailwind CSS 分享
