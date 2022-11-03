@@ -275,7 +275,7 @@ module.exports = {
 
 ## 实践 - 瀑布流卡片
 
-[EMO 云《晴天》评论 API](http://music.163.com/api/v1/resource/comments/R_SO_4_186016?limit=100&offset=0)
+[EMO 云《晴天》评论 API](https://github.com/boring-plans/tailwind-vue-example)
 
 ## 总结
 
