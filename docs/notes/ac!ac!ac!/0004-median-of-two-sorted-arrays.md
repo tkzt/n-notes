@@ -54,5 +54,3 @@ class Solution:
             else:
                 return self.get_insert_index(nums[:mid], num)
 ```
-
-## as `d`
