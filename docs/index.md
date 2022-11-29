@@ -4,7 +4,7 @@ title: Home
 
 hero:
   name: N Notes
-  text: 一个切图师枯燥的切图日志。
+  text: 以有涯隨無涯，殆已！已而為知者，殆而已矣！
   tagline: 是的，这是一个博客网站。
   image:
     src: /logo.svg
