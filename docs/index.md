@@ -7,7 +7,7 @@ hero:
   text: "以有涯隨無涯, 殆已!\n已而為知者, 殆而已矣!"
   tagline: 是的，这是一个博客网站。
   image:
-    src: /logo.svg
+    src: /logo_filled.svg
     alt: VitePress
   actions:
     - theme: brand
