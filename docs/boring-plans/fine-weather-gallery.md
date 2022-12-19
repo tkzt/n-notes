@@ -14,7 +14,6 @@ titleTemplate: Boring Plans
 经过约 **0.37s** 的思考，我决定构建一个 `SPA` 来收纳这些图片。不一会儿，一个具象的 SPA 在脑海里浮现：
 
 - 分为缩略、详情两种展示状态
-- 缩略展示采用瀑布流，可以响应式调整
 - 图片属性包括
     - 名称
     - 拍摄时间
@@ -27,6 +26,7 @@ titleTemplate: Boring Plans
         - 描述超出宽度时呈 Ellipsis 效果
         - 属性绝对定位到左下角
     - 悬浮时图像卡片整体稍微增大
+    - 采用瀑布流布局，可以响应式调整
 - 点击缩略图片进入详情
     - 详情页分为两部分：
         - 图片部分
@@ -42,17 +42,19 @@ titleTemplate: Boring Plans
     - 响应式调整
 - 适配暗黑主题
 
-同时，我想出一个~~完美~~简陋的 Logo：
+同时，我想出一个~~炫酷~~简陋的 Logo：
 
 <p align="center">
-    <img src="https://images.tkzt.cn/blog/fine-weather-gallery.png" />
+    <img src="https://images.tkzt.cn/blog/fine-weather-gallery.png" width="37%" />
 </p>
 
 ## 接着
 
 接着就进入奋力编码的阶段了。
 
-### 缩略
+### 缩略展示
+
+<br />
 
 #### 图像卡片
 
@@ -86,7 +88,7 @@ titleTemplate: Boring Plans
 </div>
 ```
 
-暗角遮罩的样式：
+遮罩层暗角所依赖的样式：
 
 ```css
 background: radial-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%),
@@ -180,7 +182,7 @@ That's cool.
 
 #### 瀑布流
 
-缩略状态的布局大致如下：
+缩略时的整体布局大致如下：
 
 ```html
 <main>
@@ -214,9 +216,9 @@ article {
 
 其中 `break-inside: avoid` 很重要。
 
-### 详情
+### 详情展示
 
-详情部分相比而言简单一些，实现主要基于一些老朋友：
+详情部分，相对而言要更简单一些，实现主要基于一些老朋友：
 
 - display: flex
 - object-fit: contain
@@ -229,10 +231,9 @@ article {
 
 ### 适配
 
-另外，还拙劣地做了一些适配。主要包括：
+此外，同样出于一些没有意义的执着，我还拙劣地做了一些适配。主要包括：
 
-- 屏幕适配
-    比如：
+- 屏幕适配，比如：
     ```css
     @media screen and (min-width: 1400px) {
         article {
@@ -240,8 +241,7 @@ article {
         }
     }
     ```
-- 深浅主题适配
-    比如：
+- 深浅主题适配，比如：
     ```css
     @media (prefers-color-scheme: dark) {
         .preface {
@@ -255,8 +255,10 @@ article {
 
 正如前面所言，原图已不易寻觅，目前所得的一些图片大多来自微信朋友圈或微博，很遗憾图片质量已损失太多。
 
-这些图片拍时多是好天气，所以干脆统称这些照片为 **「一些晴朗的日子」**。
+而这些图片拍时多是好天气，所以干脆统称这些照片为 **「一些晴朗的日子」**。
     
 图片目前采用 **Github & <a target="_blank" class="link" href="https://vercel.com/">Vercel</a>** 来托管，感谢这个伟大的时代。
+
+相册在[这里](https://fine-weather-gallery.tkzt.cn/)。
 
 That's it.
