@@ -45,7 +45,7 @@ titleTemplate: Boring Plans
 同时，我想出一个~~完美~~简陋的 Logo：
 
 <p align="center">
-    <img src="https://images.tkzt.cn/blogs/fine-weather-gallery.svg" />
+    <img src="https://images.tkzt.cn/blog/fine-weather-gallery.png" />
 </p>
 
 ## 接着
@@ -59,7 +59,7 @@ titleTemplate: Boring Plans
 最终，每个卡片大致长这样：
 
 <p align="center">
-    <img src="https://images.tkzt.cn/blogs/fwg-image-card.svg" />
+    <img src="https://images.tkzt.cn/blog/fwg-image-card.gif" />
 </p>
 
 是的，这很简单：
@@ -96,10 +96,10 @@ background: radial-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%),
 出于一些没有意义的执着，我还想要个 **Loading** 效果，最好能和每次打开 [unsplash](https://unsplash.com/) 看到的一样。经过不懈努力，我终于发现了 [blurha.sh](https://blurha.sh/)，一个用来生成模糊化占位图的不二之选。
 
 <p align="center">
-    <img src="https://images.tkzt.cn/blogs/fwg-blurha-intro.png" />
+    <img src="https://images.tkzt.cn/blog/fwg-blurha-intro.png" />
 </p>
 
-它可以将任意图片，编码成形如 `UCIrKH4.x^E09H~X%KNF~XITRjxbxoM{kER%` 的一串 Hash 值，构建占位图时，再反向将此值解码成指定大小的图片，在 Canvas 中拉伸后即可得到一个理想的模糊化占位图。解码、渲染大致就像这样：
+它可以将任意图片，编码成形如 `UCIrKH4.x^E09H~X%KNF~XITRjxbxoM{kER%` 的一串 Hash 值，反向构建时，需先将此值解码成指定大小的图片，在 Canvas 中拉伸后即可得到一个理想的模糊化占位图。解码、渲染大致就像这样：
 
 ```js
 import { decode } from 'blurhash';
@@ -170,13 +170,13 @@ await new Promise((resolve) => {
 </script>
 ```
 
-效果大概是这样：
+效果大概是这样的：
 
 <p align="center">
-    <img src="https://images.tkzt.cn/blogs/fwg-loading.svg" />
+    <img src="https://images.tkzt.cn/blog/fwg-loading.gif" />
 </p>
 
-That's Cool.
+That's cool.
 
 #### 瀑布流
 
