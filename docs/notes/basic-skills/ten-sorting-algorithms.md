@@ -18,15 +18,16 @@ titleTemplate: 军体拳
 ### Show Me The Code
 
 ```python
-def Bubble_Sort(a,n):
+def bubble_sort(a: list[float], n: int) -> list[float]:
     for i in range(n-1):
-        flagNoSwap = False # 为 True 则表示该趟冒泡有交换
-        for j in range(n-i-1):
-            if a[j]>a[j+1]:
-                a[j+1],a[j] = a[j],a[j+1]
-                flagNoSwap = True
-        if not flagNoSwap:
+        not_swap = True
+        for j in range(1, n-i):
+            if a[j] < a[j-1]:
+                a[j], a[j-1] = a[j-1], a[j]
+                not_swap = False
+        if not_swap:
             break
+    return a
 ```
 
 ### 分析
@@ -43,28 +44,25 @@ def Bubble_Sort(a,n):
 ### Show Me The Code
 
 ```python
-def Quick_Sort(a,beginIndex,endIndex):
-    if endIndex<beginIndex:return
-    L,R,M = beginIndex,endIndex,beginIndex # 初始化
-    while L!=R:
-        if M==L:
-            for i in range(R,M-1,-1):
-                R = i
-                if a[i]<a[M]:
-                    a[i],a[M] = a[M],a[i]
-                    M = i
-                    break
+def quick_sort(a: list[float], n: int) -> list[float]:
+    l, r, r_to_l = 0, n-1, True
+    while l < r:
+        if a[l] > a[r]:
+            a[l], a[r] = a[r], a[l]
+            r_to_l = not r_to_l
+
+        if r_to_l:
+            r -= 1
         else:
-            for i in range(L,M+1):
-                L = i
-                if a[i]>a[M]:
-                    a[i],a[M] = a[M],a[i]
-                    M = i
-                    break
-    if M-beginIndex > 1:
-        Quick_Sort(a,beginIndex,M-1)
-    if endIndex-M > 1:
-        Quick_Sort(a,M+1,endIndex)
+            l += 1
+
+    if l >= 2:
+        quick_sort(a[:l], l)
+
+    if n-1-l >= 2:
+        quick_sort(a[l+1:], n-1-l)
+
+    return a
 ```
 
 ### 分析
@@ -82,20 +80,15 @@ def Quick_Sort(a,beginIndex,endIndex):
 ### Show Me The Code
 
 ```python
-def Insert_Sort(a,n):
-    for i in range(n-1):
-        inserted = False
-        for j in range(i+1):
-            if a[j]>a[n-1]:
-                a[j],a[n-1] = a[n-1],a[j]
-                for k in range(j+1,n-1):
-                    a[k],a[n-1] = a[n-1],a[k]
-                inserted = True
+def insert_sort(a: list[float], n: int) -> list[float]:
+    for i in range(1, n):
+        for j in range(i):
+            if a[n-1] < a[j]:
+                a = [*a[:j], a[n-1], *a[j:n-1]]
                 break
-        if not inserted:
-            a[i+1],a[n-1] = a[n-1],a[i+1]
-            for k in range(i+2,n-1):
-                a[k],a[n-1] = a[n-1],a[k]
+            elif j == i-1:
+                a = [*a[:j+1], a[n-1], *a[j+1:n-1]]
+    return a
 ```
 
 ### 分析
