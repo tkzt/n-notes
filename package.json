@@ -15,9 +15,9 @@
     "fast-glob": "^3.2.11",
     "gray-matter": "^4.0.3",
     "vitepress": "^1.0.0-alpha.13",
-    "vue": "^3.2.37"
+    "vue": "^3.2.37",
+    "valine": "^1.5.1"
   },
   "dependencies": {
-    "valine": "^1.5.1"
   }
 }

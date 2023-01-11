@@ -1,19 +1,19 @@
 <script setup>
 import DefaultTheme from 'vitepress/theme';
-import Valine from 'valine';
-import { ref, onMounted } from 'vue';
+import { onMounted } from 'vue';
 
 const { Layout } = DefaultTheme;
-const valineInitFailed = ref(false);
 
-onMounted(()=>{
+onMounted(async ()=>{
+  const { default: Valine } = await import('valine');
+
   new Valine({
     el: '#vcomments',
     appId: 'n06TKNQNbYo839sxTZRoXHFY-MdYXbMMI',
     appKey: 'FOTSWXGrlUyGLPKmECdAMBfo',
     avatar: 'retro',
     visitor: true,
-    placeholder: 'Feel free to leave a comment, and md is supported :)'
+    placeholder: 'Feel free to leave a comment, and md syntax is supported :)'
   });
 });
 </script>
@@ -21,7 +21,7 @@ onMounted(()=>{
 <template>
   <Layout>
     <template #doc-footer-before>
-      <div id="vcomments" v-if="!valineInitFailed"></div>
+      <div id="vcomments"></div>
     </template>
   </Layout>
 </template>
