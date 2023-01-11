@@ -21,3 +21,20 @@
   background-color: unset;
   z-index: auto;
 }
+
+/* Valine Customizations */
+.vpower a {
+  color: var(--vp-c-brand) !important;
+}
+
+.vpower a:hover {
+  color: var(--vp-c-brand-dark) !important;
+}
+
+.vinput:focus {
+  border-bottom-color: var(--vp-c-brand) !important;
+}
+
+#vcomments {
+  margin-top: 36px;
+}

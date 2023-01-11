@@ -32,7 +32,7 @@ export default defineConfig({
             pattern: 'https://github.com/boring-plans/n-notes/edit/main/docs/:path'
         },
         socialLinks: [
-            { icon: 'github', link: 'https://github.com/boring-plans' },
+            { icon: 'github', link: 'https://github.com/boring-plans/n-notes' },
             { 
                 icon: {
                     svg: `<svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -42,7 +42,9 @@ export default defineConfig({
                 link: 'https://weibo.com/u/5267060694'
             }
         ],
-        footer: false,
+        footer: {
+            copyright: '<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> © 2022-PRESENT <a href="https://tkzt.cn" target="_blank">Allen Tao</a>'
+        },
         algolia: {
             appId: 'QCKYLKARBM',
             apiKey: '52369651aa7f8e76f02ce3153031f857',
