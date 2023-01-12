@@ -30,9 +30,7 @@ onMounted(()=>{
 });
 
 watch(route, ()=>{
-  if(walineInstance){
-    walineInstance.destroy();
-  }
+  resetStatistics();
 
   nextTick(()=>{
     initWaline();
@@ -71,12 +69,30 @@ function initWaline(){
  * 
  * and, average reading speed = 275
  */
-function calcTimeTaken(){
+function calcTimeTaken() {
   const main = document.querySelector('main > .vp-doc');
   if(main){
     const pictures = main.querySelectorAll('img').length;
     timeTaken.value = Math.ceil(main.innerText.length / 275 + (pictures>9?((12+4)/2*9 + (pictures-9)*3):(pictures>0?((12 + 12-pictures+1) / 2 * pictures):0)) / 60);
   }
+}
+
+function resetStatistics() {
+  if(walineInstance){
+    walineInstance.destroy();
+  }
+
+  const pageviewCountElem = document.querySelector('.waline-pageview-count');
+  if(pageviewCountElem) {
+    pageviewCountElem.innerHTML = '-';
+  }
+
+  const commentCountCountElem = document.querySelector('.waline-comment-count');
+  if(commentCountCountElem) {
+    commentCountCountElem.innerHTML = '-';
+  }
+
+  timeTaken.value = 0;
 }
 </script>
 
