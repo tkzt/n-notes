@@ -9,6 +9,7 @@ const { Layout } = DefaultTheme;
 const vpData = useData();
 const route = useRoute();
 const timeTaken = ref(0);
+const infoKey = ref(new Date().getTime());
 const encodedTitle = computed(()=>vpData.frontmatter.value.title.replaceAll(' ', '-').toLowerCase());
 const placeholders = [
   '闪电风暴已经生成！',
@@ -25,13 +26,13 @@ onMounted(()=>{
   nextTick(()=>{
     initWaline();
   });
-  calcTimeTaken();
 });
 
 watch(route, ()=>{
   if(walineInstance){
     walineInstance.destroy();
-    calcTimeTaken();
+    infoKey.value = new Date().getTime();
+    
     nextTick(()=>{
       initWaline();
     });
@@ -58,6 +59,8 @@ function initWaline(){
     pageview: true,
     comment: true,
   });
+
+  calcTimeTaken();
 }
 
 /**
@@ -69,7 +72,7 @@ function calcTimeTaken(){
   const main = document.querySelector('main > .vp-doc');
   if(main){
     const pictures = main.querySelectorAll('img').length;
-    timeTaken.value = Math.ceil(main.innerText.length / 275 + (pictures>9?((12+4)/2*9 + (pictures-9)*3):(pictures>0?((12 + 12-pictures+1) / 2 * pictures):0)));
+    timeTaken.value = Math.ceil(main.innerText.length / 275 + (pictures>9?((12+4)/2*9 + (pictures-9)*3):(pictures>0?((12 + 12-pictures+1) / 2 * pictures):0)) / 60);
   }
 }
 </script>
@@ -82,7 +85,7 @@ function calcTimeTaken(){
           {{ vpData.frontmatter.value.title }}
           <a class="header-anchor" :href="'#'+encodedTitle" aria-hidden="true">#</a>
         </h1>
-        <div class="info" :key="route.path">
+        <div class="info" :key="infoKey">
           <span>
             <font-awesome-icon icon="fa-solid fa-clock" />
             <span class="info-text">Posted on {{ vpData.frontmatter.value.date?new Date(vpData.frontmatter.value.date).toLocaleDateString():'a long time ago' }}</span>

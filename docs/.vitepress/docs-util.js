@@ -16,7 +16,7 @@ function buildTree(docs, categories) {
     return categories.reduce((pre, curr)=>{
         const { data: { title } } = matter.read(curr);
         const prefixPath = curr.replace('index.md', '');
-        const children = docs.filter(d => d.match(new RegExp(prefixPath+'[^\/]*?\.md')) && !d.includes('/index.md')).map(d=>{
+        const children = docs.filter(d => d.match(new RegExp(prefixPath+'[^/]*?.md')) && !d.includes('/index.md')).map(d=>{
             const { data: { title } } = matter.read(d);
             return {
                 title,
