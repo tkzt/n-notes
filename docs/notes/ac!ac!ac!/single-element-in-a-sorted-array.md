@@ -1,8 +1,8 @@
 ---
 title: 有序数组中的单一元素
 titleTemplate: AC!AC!AC!
+date: 2022-03-14
 ---
-# 有序数组中的单一元素
 
 ## 题目
 
@@ -17,15 +17,11 @@ titleTemplate: AC!AC!AC!
  * @param {number[]} nums
  * @return {number}
  */
-var singleNonDuplicate = function(nums) {
-    let result = 0;
-    for(const i of nums){
-        result ^= i;
-    }
-    return result
+var singleNonDuplicate = function (nums) {
+  let result = 0;
+  for (const i of nums) {
+    result ^= i;
+  }
+  return result;
 };
 ```
-
-
-
-

@@ -1,9 +1,8 @@
 ---
 title: Python 装饰器
 titleTemplate: 军体拳
+date: 2022-11-22
 ---
-
-# Python 装饰器
 
 简单再记下 Python 装饰器，记忆不太可信，它会随意删除、更改一些内容。
 

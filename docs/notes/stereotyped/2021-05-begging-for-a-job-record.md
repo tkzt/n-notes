@@ -1,9 +1,8 @@
 ---
 title: 2021 年 5 月前端造火箭副本掉落
 titleTemplate: Stereotyped
+date: 2021-05-18
 ---
-# 2021 年 5 月前端造火箭副本掉落
-
 
 ## JavaScript 基础
 

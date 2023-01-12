@@ -22,19 +22,12 @@
   z-index: auto;
 }
 
-/* Valine Customizations */
-.vpower a {
-  color: var(--vp-c-brand) !important;
+/* Waline Customizations */
+#waline {
+  margin-top: 24px;
 }
 
-.vpower a:hover {
-  color: var(--vp-c-brand-dark) !important;
-}
-
-.vinput:focus {
-  border-bottom-color: var(--vp-c-brand) !important;
-}
-
-#vcomments {
-  margin-top: 36px;
+:root {
+  --waline-theme-color: var(--vp-c-brand);
+  --waline-active-color: var(--vp-c-brand-light);
 }

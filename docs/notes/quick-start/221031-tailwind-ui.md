@@ -1,9 +1,8 @@
 ---
 title: Tailwind CSS 分享
 titleTemplate: Quick Start
+date: 2022-11-03
 ---
-
-# Tailwind CSS 分享
 
 ## What is Tailwind CSS
 

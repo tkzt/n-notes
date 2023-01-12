@@ -1,8 +1,8 @@
 ---
 title: 两数之和
 titleTemplate: AC!AC!AC!
+date: 2019-09-10
 ---
-# 两数之和
 
 ## 题曰
 

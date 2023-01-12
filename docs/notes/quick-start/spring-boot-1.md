@@ -1,9 +1,8 @@
 ---
 title: SpringBoot 速通 1：Hello, Spring Boot
 titleTemplate: Quick Start
+date: 2020-11-06
 ---
-# SpringBoot 速通 1：Hello, Spring Boot
-
 
 ## 楔子
 

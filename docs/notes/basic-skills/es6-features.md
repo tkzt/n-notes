@@ -1,8 +1,8 @@
 ---
 title: ES6 必会总结
 titleTemplate: 军体拳
+date: 2020-12-21
 ---
-# ES6 必会总结
 
 ## let & const
 

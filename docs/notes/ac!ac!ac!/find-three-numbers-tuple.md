@@ -1,8 +1,8 @@
 ---
 title: 找三元组
 titleTemplate: AC!AC!AC!
+date: 2019-09-10
 ---
-# 找三元组
 
 ## 题曰
 
@@ -51,7 +51,7 @@ class Solution:
         return res
 ```
 
-无奈超时，后加以思索，优化第三数是否存在于数组之中的查询，遂AC。优化后如下：
+无奈超时，后加以思索，优化第三数是否存在于数组之中的查询，遂 AC。优化后如下：
 
 ```python
 class Solution:

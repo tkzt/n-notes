@@ -1,8 +1,8 @@
 ---
 title: 十种排序算法
 titleTemplate: 军体拳
+date: 2018-10-24
 ---
-# 十种排序算法
 
 ## 前言
 
@@ -75,7 +75,6 @@ def quick_sort(a: list[float], n: int) -> list[float]:
 ### 简单来说
 
 ![插入排序的若干轮](/insert-sort-process.jpg)
-
 
 ### Show Me The Code
 
@@ -354,4 +353,3 @@ def Radix_Sort(a,n):
 
 ![©陶清秋「蔷薇与黄水仙」](/rose-and-daffodil.jpg)
 <small>「蔷薇与黄水仙」©Qingqiu</small>
-

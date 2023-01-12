@@ -1,7 +1,6 @@
 ---
 title: Stereotyped
+date: 2022-11-30
 ---
-
-# Stereotyped
 
 有趣的八股文。

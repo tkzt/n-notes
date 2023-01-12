@@ -1,7 +1,6 @@
 ---
 title: Quick Start
+date: 2022-11-30
 ---
-
-# Quick Start
 
 快速了解。

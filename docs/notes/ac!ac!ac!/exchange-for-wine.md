@@ -1,8 +1,8 @@
 ---
 title: LeetCode-1518 换酒问题
 titleTemplate: AC!AC!AC!
+date: 2021-12-17
 ---
-# LeetCode-1518 换酒问题
 
 ## [题目](https://leetcode-cn.com/problems/water-bottles/submissions/)
 

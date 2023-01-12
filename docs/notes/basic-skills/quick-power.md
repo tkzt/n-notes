@@ -1,8 +1,8 @@
 ---
 title: 快速幂
 titleTemplate: 军体拳
+date: 2019-09-09
 ---
-# 快速幂
 
 ## 简单来说
 

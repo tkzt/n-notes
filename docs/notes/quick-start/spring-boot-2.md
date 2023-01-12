@@ -1,8 +1,8 @@
 ---
 title: SpringBoot 速通 2：构建一个 Restful 的服务
 titleTemplate: Quick Start
+date: 2020-11-06
 ---
-# SpringBoot 速通 2：构建一个 Restful 的服务
 
 ## 一切始于 Spring Initializr
 

@@ -1,7 +1,6 @@
 ---
 title: AC!AC!AC!
+date: 2022-11-30
 ---
-
-# AC!AC!AC!
 
 主要是 LeetCode 刷题。

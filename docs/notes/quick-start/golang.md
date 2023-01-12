@@ -1,8 +1,8 @@
 ---
 title: Golang 基础语法速通
 titleTemplate: Quick Start
+date: 2020-10-10
 ---
-# Golang 基础语法速通
 
 ## 概览
 

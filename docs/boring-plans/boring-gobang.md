@@ -1,8 +1,8 @@
 ---
 title: 该死的五子棋
 titleTemplate: Boring Plans
+date: 2019-07-05
 ---
-# 该死的五子棋
 
 ## 前言
 

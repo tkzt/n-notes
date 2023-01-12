@@ -1,8 +1,8 @@
 ---
 title: 无重复字符的最长子串
 titleTemplate: AC!AC!AC!
+date: 2022-02-19
 ---
-# 无重复字符的最长子串
 
 ## 题目
 
@@ -17,22 +17,19 @@ titleTemplate: AC!AC!AC!
  * @param {string} s
  * @return {number}
  */
-var lengthOfLongestSubstring = function(s) {
-let result = 0;
-let substr = '';
-for(let i of s){
-    const index = substr.indexOf(i)
-    if(index>-1){
-        substr.length>result&&(result=substr.length)
-        substr=substr.slice(index+1)+i
-    }else{
-        substr+=i
+var lengthOfLongestSubstring = function (s) {
+  let result = 0;
+  let substr = "";
+  for (let i of s) {
+    const index = substr.indexOf(i);
+    if (index > -1) {
+      substr.length > result && (result = substr.length);
+      substr = substr.slice(index + 1) + i;
+    } else {
+      substr += i;
     }
-}
+  }
 
-return result>substr.length?result:substr.length
+  return result > substr.length ? result : substr.length;
 };
 ```
-
-
-

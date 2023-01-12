@@ -1,8 +1,8 @@
 ---
 title: 一个简单的 Vue 头像选择器
 titleTemplate: Boring Plans
+date: 2021-08-31
 ---
-# 一个简单的 Vue 头像选择器
 
 ## Preface
 

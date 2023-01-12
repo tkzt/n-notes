@@ -1,9 +1,8 @@
 ---
 title: Flex 布局新认知
 titleTemplate: 军体拳
+date: 2021-11-08
 ---
-# Flex 布局新认知
-
 
 ## Preface
 

@@ -1,9 +1,8 @@
 ---
 title: 0004 - 寻找两中序数组中位数
 titleTemplate: AC!AC!AC!
+date: 2022-08-16
 ---
-
-# 寻找两中序数组中位数
 
 这题为啥属于困难。
 
@@ -27,7 +26,7 @@ class Solution:
             the_index = self.get_insert_index(merged[start_index:], num)
             merged = merged[:start_index+the_index] + [num] + merged[start_index+the_index:]
             start_index += the_index + 1
-        
+
         merged_len = len(merged)
         mid = merged_len//2
 
@@ -42,7 +41,7 @@ class Solution:
 
         if nums_len==0:
             return 0
-            
+
         if nums_len==1:
             return 0 if nums[0]>num else 1
         else:

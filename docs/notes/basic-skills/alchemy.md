@@ -1,8 +1,8 @@
 ---
 title: 奇技淫巧
 titleTemplate: 军体拳
+date: 2018-11-20
 ---
-# 奇技淫巧
 
 ## Preface
 

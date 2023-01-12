@@ -1,8 +1,8 @@
 ---
 title: Typescript 速通
 titleTemplate: Quick Start
+date: 2021-03-17
 ---
-# Typescript 速通
 
 ## 前言
 

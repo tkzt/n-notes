@@ -1,8 +1,8 @@
 ---
 title: Git 基操
 titleTemplate: 军体拳
+date: 2021-03-16
 ---
-# Git 基操
 
 ## 简介
 
@@ -11,7 +11,8 @@ titleTemplate: 军体拳
 所谓分布式即每个节点都含有完整仓库，都可以在本地进行版本的更新、回滚，版本的管理不必依赖某一个节点（即集中式管理中的中央节点）。但实际上，为了不同节点更便捷地进行版本的同步，往往会有某个（些）节点充当另一意义上的中央（你比如 github、gitee 等）。Git 的运作看起来像这样：
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210312161433791.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTEzNTI5ODg=,size_16,color_FFFFFF,t_70)
-<small style="text-align: center; display:block">* PS. from [廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/896043488029600)</small>
+<small style="text-align: center; display:block">\* PS. from [廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/896043488029600)</small>
+
 ## 基本概念
 
 ### 版本库（repository）

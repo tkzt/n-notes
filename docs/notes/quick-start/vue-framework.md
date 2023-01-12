@@ -1,8 +1,8 @@
 ---
 title: Vue2 速通
 titleTemplate: Quick Start
+date: 2020-10-01
 ---
-# Vue2 速通
 
 ## Basic example
 

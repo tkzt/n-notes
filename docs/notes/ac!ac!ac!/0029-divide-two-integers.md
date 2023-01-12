@@ -1,9 +1,8 @@
 ---
 title: 0029 - 两数相除
 titleTemplate: AC!AC!AC!
+date: 2022-08-15
 ---
-
-# 两数相除
 
 两数家族 +1。
 
@@ -30,7 +29,7 @@ class Solution:
 
         if dividend == 0 or dividend < divisor:
             return 0
-        
+
         if divisor == 1:
             result = dividend
         else:

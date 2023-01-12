@@ -1,13 +1,12 @@
 ---
 title: 两数相加
-titleTemplate:  AC!AC!AC!
+titleTemplate: AC!AC!AC!
+date: 2021-12-18
 ---
-# 两数相加
 
 ## 题目
 
 ![](https://img-blog.csdnimg.cn/a7647c0b61144ce4ba5db7d452b727f1.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6Zm26Iqx5byA,size_20,color_FFFFFF,t_70,g_se,x_16)
-
 
 ## 分析
 

@@ -1,8 +1,7 @@
 ---
 title: Hello, World
+date: 2022-11-30
 ---
-
-# Hello, World
 
 我们都是从 **Hello, World** 开始的，不是吗？
 

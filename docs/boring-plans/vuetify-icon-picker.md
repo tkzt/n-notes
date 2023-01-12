@@ -1,8 +1,8 @@
 ---
 title: Vuetify Icon Picker
 titleTemplate: Boring Plans
+date: 2021-09-02
 ---
-#  Vuetify Icon Picker
 
 一个 Vuetify 中的 [material design icons](https://materialdesignicons.com/) 选择器。
 
@@ -34,11 +34,11 @@ import IconPicker from "./components/IconPicker.vue";
 
 export default {
   components: {
-    IconPicker
+    IconPicker,
   },
   data: () => ({
-    selected: ""
-  })
+    selected: "",
+  }),
 };
 </script>
 ```
@@ -49,8 +49,7 @@ export default {
 
 本着造福大众的精神，参照某 eecg 的分类，陶某严格从 6000+ 个 icons 中，按照 `方向`、`指示`、`编辑`、`数据`、`形状`、`通用` 几个类别中分别挑选出 83、37、108、16、66、96 个 icons。其效果如下：
 
-![\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-AUaoA6vm-1630575158056)(assets/example.png)\]](https://img-blog.csdnimg.cn/ce3dcb6037264c79a4a55e7fdaba589b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA6Zm26Iqx5byA,size_20,color_FFFFFF,t_70,g_se,x_16)
-
+![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-AUaoA6vm-1630575158056)(assets/example.png)]](https://img-blog.csdnimg.cn/ce3dcb6037264c79a4a55e7fdaba589b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA6Zm26Iqx5byA,size_20,color_FFFFFF,t_70,g_se,x_16)
 
 更具体的示例见 [此](https://boring-plans.github.io/vuetify-icon-picker/)
 

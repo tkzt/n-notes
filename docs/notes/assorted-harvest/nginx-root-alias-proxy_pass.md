@@ -1,8 +1,8 @@
 ---
 title: 关于 nginx 中 root、alias、proxy_pass 请求的实际路径
 titleTemplate: 掉落
+date: 2020-04-07
 ---
-# 关于 nginx 中 root、alias、proxy_pass 请求的实际路径
 
 ## 前言
 
@@ -20,7 +20,7 @@ location /img {
 }
 ```
 
-访问 ``http://ip:1997/img/morning.jpg``，其实访问 ``http://ip:1997/img/img/sky/morning.jpg``。
+访问 `http://ip:1997/img/morning.jpg`，其实访问 `http://ip:1997/img/img/sky/morning.jpg`。
 
 #### 而如下配置时：
 
@@ -32,8 +32,7 @@ location /img {
 }
 ```
 
-访问 ``http://ip:1997/img/morning.jpg``，其实访问 ``http://ip:1997/img/sky/morning.jpg``。
-
+访问 `http://ip:1997/img/morning.jpg`，其实访问 `http://ip:1997/img/sky/morning.jpg`。
 
 ### proxy_pass
 
@@ -58,6 +57,7 @@ location /img/sky {
     proxy_pass http://ip_another:port_another/;
 }
 ```
+
 访问 `http://ip:1997/img/sky/morning.jpg`，代理到 `http://ip_another:port_another/morning.jpg`。
 
 #### 而当如下配置时：
@@ -70,7 +70,7 @@ location /img/sky {
 }
 ```
 
-访问 ``http://ip:1997/img/sky/morning.jpg``，其实访问 ``http://ip_another:port_another/static/imgs/morning.jpg``。
+访问 `http://ip:1997/img/sky/morning.jpg`，其实访问 `http://ip_another:port_another/static/imgs/morning.jpg`。
 
 #### 而当如下配置时：
 
@@ -82,7 +82,7 @@ location /img/sky {
 }
 ```
 
-访问 ``http://ip:1997/img/sky/morning.jpg``，其实访问 ``http://ip_another:port_another/static/imgsmorning.jpg``。
+访问 `http://ip:1997/img/sky/morning.jpg`，其实访问 `http://ip_another:port_another/static/imgsmorning.jpg`。
 
 ## 后语
 

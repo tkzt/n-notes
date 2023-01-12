@@ -1,8 +1,8 @@
 ---
 title: 恶灵王 v0.0.1 诞生记
 titleTemplate: Boring Plans
+date: 2019-04-09
 ---
-# 恶灵王 v0.0.1 诞生记
 
 ## 晚霞
 

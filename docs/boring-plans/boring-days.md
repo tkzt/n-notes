@@ -1,8 +1,8 @@
 ---
 title: Boring Days
 titleTemplate: Boring Plans
+date: 2022-05-03
 ---
-# Boring Days
 
 今天（2022-05-03）也是等待 Vuetify 3 和 上海 Release 的一天。
 

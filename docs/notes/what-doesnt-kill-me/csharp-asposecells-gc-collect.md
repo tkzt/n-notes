@@ -1,8 +1,8 @@
 ---
 title: C# 记一次 AsposeCells 与 GC.Collect 的配合
 titleTemplate: 那些杀不死我的
+date: 2019-10-21
 ---
-# C# 记一次 AsposeCells 与 GC.Collect 的配合
 
 ## 问题
 

@@ -1,8 +1,8 @@
 ---
 title: Ace Editor 获取选中内容
 titleTemplate: 那些杀不死我的
+date: 2021-12-27
 ---
-# Ace Editor 获取选中内容
 
 ## Preface
 

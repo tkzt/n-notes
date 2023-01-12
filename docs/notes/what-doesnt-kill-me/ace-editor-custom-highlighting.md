@@ -1,8 +1,8 @@
 ---
 title: Ace Editor 自定义高亮
 titleTemplate: 那些杀不死我的
+date: 2021-12-22
 ---
-# Ace Editor 自定义高亮
 
 ## Preface
 

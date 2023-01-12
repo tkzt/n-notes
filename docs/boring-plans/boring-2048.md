@@ -1,8 +1,8 @@
 ---
 title: Vue 实现 2048
 titleTemplate: Boring Plans
+date: 2020-03-02
 ---
-# Vue 实现 2048
 
 ## 前言
 

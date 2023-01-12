@@ -12,12 +12,13 @@
   "license": "MIT",
   "devDependencies": {
     "@algolia/client-search": "^4.9.1",
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/vue-fontawesome": "^3.0.2",
+    "@waline/client": "^2.14.6",
     "fast-glob": "^3.2.11",
     "gray-matter": "^4.0.3",
-    "vitepress": "^1.0.0-alpha.13",
-    "vue": "^3.2.37",
-    "valine": "^1.5.1"
-  },
-  "dependencies": {
+    "vitepress": "^1.0.0-alpha.35",
+    "vue": "^3.2.37"
   }
 }

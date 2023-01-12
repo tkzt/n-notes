@@ -1,9 +1,8 @@
 ---
 title: Are you an array ?
 titleTemplate: Stereotyped
+date: 2022-11-06
 ---
-
-# Are you an array ?
 
 ## Preface
 
@@ -28,8 +27,8 @@ titleTemplate: Stereotyped
 另外顺便贴一下昨晚偶然看到的八股文：
 
 ```js
-const foo = ['1', '2', '3']
-const bar = foo.map(parseInt)
+const foo = ["1", "2", "3"];
+const bar = foo.map(parseInt);
 ```
 
 `bar` 的值是：
@@ -38,4 +37,4 @@ const bar = foo.map(parseInt)
 [1, NaN, NaN]
 ```
 
-这是因为，`parseInt` 的第二个参数是 `radix`，理论上取值 `2-36`，ES 5 规定传 0 或不传按 10 进制来转换。 
+这是因为，`parseInt` 的第二个参数是 `radix`，理论上取值 `2-36`，ES 5 规定传 0 或不传按 10 进制来转换。

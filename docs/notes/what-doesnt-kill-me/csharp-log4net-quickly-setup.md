@@ -1,8 +1,8 @@
 ---
 title: C# 如何在五分钟之内愉快地开始使用 log4net
 titleTemplate: 那些杀不死我的
+date: 2019-08-28
 ---
-# C# 如何在五分钟之内愉快地开始使用 log4net
 
 ## 简单来说
 

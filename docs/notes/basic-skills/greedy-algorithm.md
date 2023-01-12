@@ -1,8 +1,8 @@
 ---
 title: 贪心算法
 titleTemplate: 军体拳
+date: 2018-11-12
 ---
-# 贪心算法
 
 ## 前言
 
