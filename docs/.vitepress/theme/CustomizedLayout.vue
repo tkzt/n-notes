@@ -9,7 +9,6 @@ const { Layout } = DefaultTheme;
 const vpData = useData();
 const route = useRoute();
 const timeTaken = ref(0);
-const infoKey = ref(new Date().getTime());
 const encodedTitle = computed(()=>vpData.frontmatter.value.title.replaceAll(' ', '-').toLowerCase());
 const placeholders = [
   '闪电风暴已经生成！',
@@ -31,8 +30,6 @@ onMounted(()=>{
 watch(route, ()=>{
   if(walineInstance){
     walineInstance.destroy();
-    infoKey.value = new Date().getTime();
-    
     nextTick(()=>{
       initWaline();
     });
@@ -85,22 +82,22 @@ function calcTimeTaken(){
           {{ vpData.frontmatter.value.title }}
           <a class="header-anchor" :href="'#'+encodedTitle" aria-hidden="true">#</a>
         </h1>
-        <div class="info" :key="infoKey">
-          <span>
+        <div class="info" :key="route.path">
+          <span key="date">
             <font-awesome-icon icon="fa-solid fa-clock" />
             <span class="info-text">Posted on {{ vpData.frontmatter.value.date?new Date(vpData.frontmatter.value.date).toLocaleDateString():'a long time ago' }}</span>
           </span>
-          <span>
+          <span key="visitors">
             <font-awesome-icon icon="fa-solid fa-eye" />
             <span class="info-text waline-pageview-count" :data-path="route.path">-</span>
             <span class="info-text after-num">visitor(s)</span>
           </span>
-          <span>
+          <span key="comments">
             <font-awesome-icon icon="fa-solid fa-comment" />
             <span class="info-text waline-comment-count" :data-path="route.path">-</span>
             <span class="info-text after-num">comment(s)</span>
           </span>
-          <span>
+          <span key="timeTaken">
             <font-awesome-icon icon="fa-solid fa-hourglass" />
             <span class="info-text">{{ timeTaken }} min read</span>
           </span>
