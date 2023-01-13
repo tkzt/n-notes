@@ -1,6 +1,4 @@
-<p align="center">
-    <img width="180" src="https://boring-plans.github.io/n-notes/logo.svg" alt="N Notes Logo" />
-</p>
+<img width="180" src="https://boring-plans.github.io/n-notes/logo.svg" alt="N Notes Logo" align="right"/>
 
 # N Notes
 
