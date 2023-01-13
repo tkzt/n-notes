@@ -10,15 +10,6 @@ const vpData = useData();
 const route = useRoute();
 const timeTaken = ref(0);
 const encodedTitle = ref('');
-const placeholders = [
-  '闪电风暴已经生成！',
-  '苏联力量强大无比！',
-  '告诉我你在想什么~',
-  '清除你的个体意识！',
-  '基洛夫刚刚造好，基洛夫报道！',
-  '正在行动中！',
-  'shake it, baby!'
-]
 let walineInstance = null;
 
 onMounted(()=>{
@@ -45,7 +36,7 @@ watch(vpData.isDark, (val)=>{
   }
 });
 
-function initWaline(){
+async function initWaline(){
   const walineElem = document.querySelector('#waline')
   if(walineElem){
       walineInstance = init({
@@ -53,7 +44,7 @@ function initWaline(){
       serverURL: 'https://waline.tkzt.cn',
       dark: vpData.isDark.value,
       locale: {
-        placeholder: placeholders[Math.floor(Math.random()*placeholders.length)],
+        placeholder: (await (await fetch('https://v1.jinrishici.com/rensheng.txt')).text()),
         sofa: '空空如也。',
       },
       pageview: true,
@@ -107,7 +98,7 @@ function resetStatistics() {
         <div class="info">
           <span>
             <client-only><font-awesome-icon icon="fas fa-clock"/></client-only>
-            <span class="info-text" key="date">Posted on {{ vpData.frontmatter.value.date?new Date(vpData.frontmatter.value.date).toLocaleDateString():'a long time ago' }}</span>
+            <span class="info-text" key="date">{{ vpData.frontmatter.value.date?new Date(vpData.frontmatter.value.date).toLocaleDateString('sv'):'A long time ago' }}</span>
           </span>
           <span>
             <client-only><font-awesome-icon icon="fas fa-eye"/></client-only>
@@ -120,7 +111,7 @@ function resetStatistics() {
             <span class="info-text after-num">comment(s)</span>
           </span>
           <span>
-            <client-only><font-awesome-icon icon="fas fa-hourglass"/></client-only>
+            <client-only><font-awesome-icon icon="fas fa-hourglass-start"/></client-only>
             <span class="info-text">{{ timeTaken || '-' }} min read</span>
           </span>
         </div>
@@ -134,7 +125,7 @@ function resetStatistics() {
 
 <style scoped>
 .info {
-  margin-top: 16px;
+  margin: 16px 0;
   padding: 16px;
   background-color: var(--vp-c-bg-soft);
   border-radius: 8px;
@@ -158,7 +149,7 @@ function resetStatistics() {
   content: ' ';
 }
 
-.fa-hourglass {
+.fa-hourglass-start {
   width: 13px;
 }
 

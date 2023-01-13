@@ -1,7 +1,6 @@
 ---
 title: 当我踩小强时我踩些什么
 titleTemplate: Cheap Talks
-date: 2018-08-31
 ---
 
 ## 当我...我...
