@@ -91,9 +91,9 @@ function resetStatistics() {
   <Layout>
     <template #doc-before>
       <div class="vp-doc">
-        <h1 :id="encodedTitle" tabindex="-1">
+        <h1 :id="encodedTitle.value" tabindex="-1">
           {{ vpData.frontmatter.value.title }}
-          <a class="header-anchor" :href="'#'+encodedTitle" aria-hidden="true">#</a>
+          <a class="header-anchor" :href="'#'+encodedTitle.value" aria-hidden="true">#</a>
         </h1>
         <div class="info">
           <span>
@@ -141,6 +141,8 @@ function resetStatistics() {
   margin-left: 8px;
 }
 
+
+
 .info-text.after-num {
   margin-left: 0;
 }
@@ -149,8 +151,12 @@ function resetStatistics() {
   content: ' ';
 }
 
+.fa-hourglass-start + .info-text {
+  margin-left: calc(8px - 0.8px);
+}
+
 .fa-hourglass-start {
-  width: 13px;
+  width: 14.63px;
 }
 
 @media (max-width: 960px) {
