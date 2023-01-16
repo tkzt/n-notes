@@ -1,7 +1,6 @@
 ---
 title: 孤蝉唱夏
 titleTemplate: Cheap Talks
-date: 2020-05-21
 ---
 
 又知又觉，夏天又来了。

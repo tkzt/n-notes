@@ -38,7 +38,7 @@ const archives = ref([
   },
   {
     title: 'Cheap Talks',
-    details: "📕 又叫「程序员物语」。写程序以前, 他是个诗人。",
+    details: "📕 又叫「程序以外」。写程序以前, 他是个诗人。",
     latest: '/cheap-talks/cicadas-crying'
   },
   {
