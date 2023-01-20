@@ -6,7 +6,7 @@ date: 2023-01-19
 
 是的，这是一篇年度总结。
 
-我很喜欢标题里这种命名风格，比如 `Love, Death & Robots`、`Gun, Gore & Cannoli`、`Ori and the Will of the Wisps`、`Command & Conquer`……通过一些意象来概括（或者说揭示）主题，总的来说这一年可以粗糙地概括成这几个意象。
+我很喜欢标题里这种命名风格，通过一些意象来概括（或者说揭示）主题，比如 `Love, Death & Robots`、`Gun, Gore & Cannoli`、`Ori and the Will of the Wisps`、`Command & Conquer`……总的来说这一年可以粗糙地概括成标题里这几个意象。
 
 而具体而言，可以分为得失两部分。
 

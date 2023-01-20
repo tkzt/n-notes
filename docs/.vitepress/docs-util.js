@@ -17,12 +17,13 @@ function buildTree(docs, categories) {
         const { data: { title } } = matter.read(curr);
         const prefixPath = curr.replace('index.md', '');
         const children = docs.filter(d => d.match(new RegExp(prefixPath+'[^/]*?.md')) && !d.includes('/index.md')).map(d=>{
-            const { data: { title } } = matter.read(d);
+            const { data: { title, date } } = matter.read(d);
             return {
                 title,
                 link: d.replace(/(^docs|.md$)/g, ''),
+                date: date||''
             }
-        })
+        }).sort((a, b)=>a.date?new Date(a.date)-new Date(b.date):-1)
         const category = {
             link: curr.replace(/(^docs|index.md$)/g, ''),
             title,
