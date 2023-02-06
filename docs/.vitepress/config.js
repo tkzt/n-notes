@@ -29,10 +29,10 @@ export default defineConfig({
         nav: nav(),
         sidebar: sidebar(),
         editLink: {
-            pattern: 'https://github.com/boring-plans/n-notes/edit/main/docs/:path'
+            pattern: 'https://github.com/tkzt/n-notes/edit/main/docs/:path'
         },
         socialLinks: [
-            { icon: 'github', link: 'https://github.com/boring-plans/n-notes' },
+            { icon: 'github', link: 'https://github.com/tkzt/n-notes' },
             { 
                 icon: {
                     svg: `<svg style="width:24px;height:24px" viewBox="0 0 24 24">
