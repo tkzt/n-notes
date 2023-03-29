@@ -1,19 +1,15 @@
 :root {
-    --vp-c-brand: #9575CD;
-    --vp-c-brand-dark: #512DA8;
-    --vp-c-brand-light: #B39DDB;
-    --vp-home-hero-name-color: transparent;
-    --vp-home-hero-name-background: -webkit-linear-gradient(
-      90deg,
+  --vp-c-brand: #9575CD;
+  --vp-c-brand-dark: #512DA8;
+  --vp-c-brand-light: #B39DDB;
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(90deg,
       #C6ADFF 30%,
-      #7948EA
-    );
-    --vp-home-hero-image-background-image: linear-gradient(
-      0deg,
+      #7948EA);
+  --vp-home-hero-image-background-image: linear-gradient(0deg,
       #7948EA 50%,
-      #C6ADFF 50%
-    );
-    --vp-home-hero-image-filter: blur(40px);
+      #C6ADFF 50%);
+  --vp-home-hero-image-filter: blur(40px);
 }
 
 .VPNav.no-sidebar {
