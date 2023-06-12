@@ -20,7 +20,6 @@ hero:
 
 <div class="container">
   <div class="latest-articles" v-if="articles.length">
-    <div class="latest-title">Latest:</div>
     <a v-for="{title, date, link}, index in articles" :key="index" class="article" :href="link">
       <div>{{title}}</div>
       <div>{{date}}</div>
@@ -63,13 +62,6 @@ onMounted(()=>{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-.latest-title {
-  margin-bottom: 24px;
-  font-size: large;
-  font-weight: 500;
-  width: 100%;
 }
 
 .article {
