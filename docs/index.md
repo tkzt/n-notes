@@ -27,10 +27,12 @@ hero:
     </a>
   </div>
   <div v-else class="loading-container">
-    <div class="loading">
-      <font-awesome-icon icon="fas fa-circle-notch" class="loading-icon"/>
-      <div>Loading..</div>
-    </div>
+    <client-only>
+      <div class="loading">
+        <font-awesome-icon icon="fas fa-circle-notch" class="loading-icon"/>
+        <div>Loading..</div>
+      </div>
+    </client-only>
   </div>
 </div>
 
