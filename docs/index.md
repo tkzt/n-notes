@@ -19,42 +19,43 @@ hero:
 ---
 
 <div class="container">
-  <div class="archives">
-    <div v-for="{title, details, latest}, index in archives" :key="index" class="archive">
-      <p><a :href="latest">{{title}}</a></p>
-      <p>{{details}}</p>
+  <div class="latest-articles" v-if="articles.length">
+    <div class="latest-title">Latest:</div>
+    <a v-for="{title, date, link}, index in articles" :key="index" class="article" :href="link">
+      <div>{{title}}</div>
+      <div>{{date}}</div>
+    </a>
+  </div>
+  <div v-else class="loading-container">
+    <div class="loading">
+      <font-awesome-icon icon="fas fa-circle-notch" class="loading-icon"/>
+      <div>Loading..</div>
     </div>
   </div>
 </div>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-const archives = ref([
-  {
-    title: 'Boring Plans',
-    details: "👨‍💻 一些个人项目的开发记录。",
-    latest: '/boring-plans/fine-weather-gallery'
-  },
-  {
-    title: 'Cheap Talks',
-    details: "📕 又叫「程序以外」。写程序以前, 他是个诗人。",
-    latest: '/cheap-talks/cicadas-crying'
-  },
-  {
-    title: 'Notes',
-    details: "📑 博客。知识积累、刷题笔记 ..",
-    latest: '/notes/basic-skills/python-decorator'
-  }
-])
+const articles = ref([])
+
+async function loadLatest(count=5){
+  articles.value = (await (await fetch('https://n-notes-crawling.tkzt.cn/blogs.json', {mode: 'cors', method: 'GET'})).json()).sort((a, b)=>new Date(b.date)-new Date(a.date)).slice(0, count);
+}
+
+onMounted(()=>{
+  loadLatest();
+})
 </script>
 
 <style scoped>
 .container {
   padding: 0 48px;
+  position: relative;
 }
 
-.archives {
+.latest-articles {
   max-width: 1152px;
   margin: 0 auto;
   display: flex;
@@ -62,39 +63,72 @@ const archives = ref([
   justify-content: space-between;
 }
 
-.archive {
-  background: var(--vp-c-bg-soft);
+.latest-title {
+  margin-bottom: 24px;
+  font-size: large;
+  font-weight: 500;
+  width: 100%;
+}
+
+.article {
+  cursor: pointer;
   width: 100%;
   border-radius: 12px;
   padding: 24px;
   margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--vp-c-bg-soft);
 }
 
-.archive > p:nth-of-type(1) {
+.article:hover {
+  background: var(--vp-c-bg-mute);
+}
+
+.article > p:nth-of-type(1) {
   font-size: medium;
   font-weight: 600;
   color: var(--vp-c-text-1);
   cursor: pointer;
 }
 
-.archive > p:nth-of-type(1):hover {
-  text-decoration: underline;
-}
-
-.archive > p:nth-of-type(2) {
+.article > p:nth-of-type(2) {
   font-size: small;
   color: var(--vp-c-text-2);
-  margin: 8px 0;
 }
 
-@media (min-width: 960px) {
-  .container {
-    padding: 0 64px;
-  }
+.loading-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
 
-  .archive {
-    width: 32%;
-    margin: 0;
+.loading {
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+
+.loading-icon {
+  animation: spin 1s linear infinite;
+  margin-right: .5rem;
+}
+
+@media screen and (min-width: 960px) {
+  .article {
+    width: 49%;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 </style>

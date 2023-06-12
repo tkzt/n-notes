@@ -26,3 +26,7 @@
   --waline-theme-color: var(--vp-c-brand);
   --waline-active-color: var(--vp-c-brand-light);
 }
+
+.link-underline:hover {
+  text-decoration: underline;
+}
