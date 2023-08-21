@@ -30,3 +30,7 @@
 .link-underline:hover {
   text-decoration: underline;
 }
+
+main {
+  text-align: justify;
+}
