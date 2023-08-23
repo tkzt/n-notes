@@ -109,4 +109,10 @@ Other tech used:
 - [UnoCSS](https://unocss.dev/)
 
 
+## Links
+
+- a [DEMO](https://sjv.tkzt.cn/)
+- the [REPO](https://github.com/tkzt/vue-sjv)
+
+
 That's it.
