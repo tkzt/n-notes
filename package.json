@@ -11,15 +11,17 @@
   "main": "index.js",
   "author": "Allen Tao",
   "license": "MIT",
+  "type": "module",
   "devDependencies": {
-    "@algolia/client-search": "^4.14.3",
-    "@fortawesome/fontawesome-svg-core": "^6.2.1",
-    "@fortawesome/free-solid-svg-icons": "^6.2.1",
-    "@fortawesome/vue-fontawesome": "^3.0.2",
-    "@waline/client": "^2.14.6",
-    "fast-glob": "^3.2.12",
+    "@algolia/client-search": "^4.22.0",
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/vue-fontawesome": "^3.0.5",
+    "@waline/client": "^2.15.8",
+    "fast-glob": "^3.3.2",
+    "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
-    "vitepress": "1.0.0-alpha.36",
-    "vue": "^3.2.45"
+    "vitepress": "1.0.0-rc.36",
+    "vue": "^3.4.6"
   }
 }

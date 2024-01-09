@@ -12,11 +12,6 @@
   --vp-home-hero-image-filter: blur(40px);
 }
 
-.VPNav.no-sidebar {
-  background-color: unset;
-  z-index: auto;
-}
-
 /* Waline Customizations */
 #waline {
   margin-top: 24px;

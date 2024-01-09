@@ -1,5 +1,8 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig, createContentLoader } from 'vitepress'
 import { getCategories } from './docs-util'
+import { Feed } from 'feed'
+import { writeFileSync } from "node:fs"
+import { join } from 'node:path'
 
 const macroCategories = [
     {
@@ -31,14 +34,6 @@ export default defineConfig({
         editLink: {
             pattern: 'https://github.com/tkzt/n-notes/edit/main/docs/:path'
         },
-        socialLinks: [
-            {
-                icon: {
-                    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zM112 416c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm157.533 0h-34.335c-6.011 0-11.051-4.636-11.442-10.634-5.214-80.05-69.243-143.92-149.123-149.123-5.997-.39-10.633-5.431-10.633-11.441v-34.335c0-6.535 5.468-11.777 11.994-11.425 110.546 5.974 198.997 94.536 204.964 204.964.352 6.526-4.89 11.994-11.425 11.994zm103.027 0h-34.334c-6.161 0-11.175-4.882-11.427-11.038-5.598-136.535-115.204-246.161-251.76-251.76C68.882 152.949 64 147.935 64 141.774V107.44c0-6.454 5.338-11.664 11.787-11.432 167.83 6.025 302.21 141.191 308.205 308.205.232 6.449-4.978 11.787-11.432 11.787z"/></svg>`
-                },
-                link: 'https://n-notes-crawling.tkzt.cn/feed.xml'
-            }
-        ],
         footer: {
             copyright: '<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" class="link-underline">CC BY-NC-SA 4.0 ↗️</a> © 2022-PRESENT <a href="https://tkzt.cn" target="_blank" class="link-underline">Allen Tao ↗️</a>'
         },
@@ -47,6 +42,9 @@ export default defineConfig({
             apiKey: '52369651aa7f8e76f02ce3153031f857',
             indexName: 'tkzt',
         }
+    },
+    buildEnd: async (config) => {
+        await dumpArticles(config.outDir)
     }
 })
 
@@ -58,7 +56,7 @@ function nav() {
     }));
 }
 
-function sidebar() {
+async function sidebar() {
     const formattedCategories = getFormattedCategories();
     return macroCategories.reduce((pre, curr) => ({
         ...pre,
@@ -76,4 +74,53 @@ function getFormattedCategories() {
             link: cr.link
         }))
     }));
+}
+
+async function dumpArticles(outDir) {
+    const host = "https://n-notes.tkzt.cn"
+    const feed = new Feed({
+        title: 'N Notes',
+        description: '以有涯隨無涯，殆已！已而為知者，殆而已矣！是的，这是一个博客网站。',
+        id: host,
+        link: host,
+        language: 'zh',
+        image: `${host}/logo_filled.svg`,
+        favicon: `${host}/favicon.ico`,
+        copyright: 'Copyright (c) 2022-present, Allen Tao'
+    })
+    const articles = await createContentLoader('**/*.md', {
+        excerpt: true,
+        render: true
+    }).load()
+
+    articles.sort((a, b) => (+new Date(a.frontmatter.date) || Infinity) - ((+new Date(b.frontmatter.date) || Infinity)))
+
+    const articlesJsonArr = []
+    articles.forEach(({ html, url, frontmatter, excerpt }) => {
+        if (!url.endsWith('/') && frontmatter.title) {
+            feed.addItem({
+                title: frontmatter.title,
+                id: `${host}${url}`,
+                link: `${host}${url}`,
+                description: excerpt,
+                content: html,
+                author: [
+                    {
+                        name: 'Allen Tao',
+                        email: 'allen@tkzt.cn',
+                        link: 'https://tkzt.cn'
+                    }
+                ],
+                date: frontmatter.date
+            })
+            articlesJsonArr.push({
+                title: frontmatter.title,
+                link: `${host}${url}`,
+                date: frontmatter.date
+            })
+        }
+    })
+
+    writeFileSync(join(outDir, 'feed.rss'), feed.rss2())
+    writeFileSync(join(outDir, 'blogs.json'), JSON.stringify(articlesJsonArr))
 }
