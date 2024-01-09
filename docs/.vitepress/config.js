@@ -93,7 +93,7 @@ async function dumpArticles(outDir) {
         render: true
     }).load()
 
-    articles.sort((a, b) => (+new Date(a.frontmatter.date) || Infinity) - ((+new Date(b.frontmatter.date) || Infinity)))
+    articles.sort((a, b) => (+new Date(b.frontmatter.date) || -Infinity) - ((+new Date(a.frontmatter.date) || -Infinity)))
 
     const articlesJsonArr = []
     articles.forEach(({ html, url, frontmatter, excerpt }) => {
