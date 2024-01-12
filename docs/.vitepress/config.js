@@ -56,19 +56,19 @@ function nav() {
     }));
 }
 
-async function sidebar() {
+function sidebar() {
     const formattedCategories = getFormattedCategories();
     return macroCategories.reduce((pre, curr) => ({
         ...pre,
-        [curr.path]: formattedCategories.filter(fc => fc.link.includes(curr.path) && fc.items?.length)
-    }), {})
+        [curr.path]: formattedCategories.filter(fc => fc.link.startsWith(curr.path) && fc.items?.length)
+    }), {});
 }
 
 function getFormattedCategories() {
     return getCategories().map(c => ({
         link: c.link,
         text: c.title,
-        collapsible: true,
+        collapsed: true,
         items: c.children.map(cr => ({
             text: cr.title,
             link: cr.link
