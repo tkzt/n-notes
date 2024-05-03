@@ -29,7 +29,6 @@ export default defineConfig({
     themeConfig: {
         logo: '/logo.svg',
         siteTitle: 'N Notes',
-        nav: nav(),
         sidebar: sidebar(),
         editLink: {
             pattern: 'https://github.com/tkzt/n-notes/edit/main/docs/:path'
@@ -47,14 +46,6 @@ export default defineConfig({
         await dumpArticles(config.outDir)
     }
 })
-
-function nav() {
-    return macroCategories.map(mc => ({
-        text: mc.text,
-        activeMatch: mc.path,
-        link: mc.path
-    }));
-}
 
 function sidebar() {
     const formattedCategories = getFormattedCategories();
