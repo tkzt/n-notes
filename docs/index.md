@@ -22,7 +22,7 @@ hero:
   <div class="latest-articles" v-if="articles.length">
     <a v-for="{title, date, link}, index in articles" :key="index" class="article" :href="link">
       <div>{{title}}</div>
-      <div>{{date}}</div>
+      <small>{{dayjs(date).format("MMM DD, YY")}}</small>
     </a>
   </div>
   <div v-else class="loading-container">
@@ -37,12 +37,13 @@ hero:
 
 <script setup>
 import { ref, onMounted } from 'vue';
+import dayjs from 'dayjs'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 const articles = ref([])
 
 async function loadLatest(count=5){
-  articles.value = (await (await fetch('https://n-notes-crawling.tkzt.cn/blogs.json', {mode: 'cors', method: 'GET'})).json()).sort((a, b)=>new Date(b.date)-new Date(a.date)).slice(0, count);
+  articles.value = (await (await fetch('https://n-notes.tkzt.cn/blogs.json', {mode: 'cors', method: 'GET'})).json()).sort((a, b)=>new Date(b.date)-new Date(a.date)).slice(0, count);
 }
 
 onMounted(()=>{
@@ -77,7 +78,7 @@ onMounted(()=>{
 }
 
 .article:hover {
-  background: var(--vp-c-bg-mute);
+  background: var(--vp-c-gray-3);
 }
 
 .article > p:nth-of-type(1) {
@@ -124,5 +125,11 @@ onMounted(()=>{
   to {
     transform: rotate(360deg);
   }
+}
+
+@media (prefers-color-scheme: dark){
+  .article:hover {
+  background: var(--vp-c-gray-3);
+}
 }
 </style>
