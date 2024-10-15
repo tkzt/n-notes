@@ -8,8 +8,8 @@ You can click [here](https://n-notes.tkzt.cn/) to visit.
 
 ## Article Categories
 
-- Boring Plans - 一些 Pet Projects 的开发日志
-- 程序员物语 - 写程序以前, 他是个诗人
+~~- Boring Plans - 一些 Pet Projects 的开发日志~~
+~~- 程序员物语 - 写程序以前, 他是个诗人~~
 - Notes
     - AC!AC!AC! - 主要是 LeetCode 刷题
     - 掉落 - 比如丘丘胶、蝙蝠翅膀、禽肉等等
